@@ -1,0 +1,48 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.contentArea{
+    height: 84vh;
+    width: 100vw;
+}
+
+.content{
+    float: left;
+    width: 60vw;
+    overflow: scroll;
+}
+
+
+
+.footer{
+    height:5vh;
+    width: 100vw;
+    background-color: blueviolet;
+
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+td,th{
+    padding: 1vh;
+    border: 2px solid black;
+}
+
+@media only screen  and (max-width: 1280px) {
+    table{
+        width: 100%;
+    }
+    .content{
+        width: 100vw;
+    }
+}
