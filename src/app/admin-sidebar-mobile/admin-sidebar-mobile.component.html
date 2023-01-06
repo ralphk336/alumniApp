@@ -1,0 +1,9 @@
+<div class="hamburger" (click)="showSidebar()" [class.hiddenElement]="hideHamburger">
+    <img  src={{hamburgerImage}}>
+</div>
+<div class="sidebar" [class.hiddenElement]="hideSidebarMobile">
+    <ul>
+        <a href="#"><li>change website display</li></a>
+        <a href="#"><li>Logout</li></a>
+    </ul>
+</div>

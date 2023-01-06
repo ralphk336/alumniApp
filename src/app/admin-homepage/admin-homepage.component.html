@@ -1,0 +1,41 @@
+<div class="container">
+     
+    <div class="content"> 
+        <div class="newLine">
+            <div id="members" class="card">
+                <a [href]="membersPage">
+                    <img src={{membersImage}} >
+                </a>
+                <div>Members</div>
+            </div>
+            <div id="events" class="card">
+                <a [href]="eventsPage">
+                    <img src={{eventsImage}} >
+                </a>
+                <div>Events</div>
+            </div>
+        </div>
+    </div>
+    <app-admin-sidebar-desktop></app-admin-sidebar-desktop>
+
+    <div class="content">
+        <div class="newLine">
+            <div id="announce" class="card">
+                <a [href]="announcePage">
+                    <img src={{announceImage}}  >
+                </a>
+                <div>Announce</div>
+            </div>
+            <div id="reports" class="card">
+                <a [href]="reportsPage">
+                    <img src={{reportsImage}} >
+                </a>
+                <div>Reports</div>
+            </div>
+        </div>
+
+        
+
+    </div>
+   
+</div>
