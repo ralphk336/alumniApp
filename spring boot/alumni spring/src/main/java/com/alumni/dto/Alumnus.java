@@ -1,10 +1,18 @@
 package com.alumni.dto;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,7 +34,38 @@ public class Alumnus {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
+	
+	/*
+	@ManyToMany(mappedBy="subscribedAlumni")
+	List<Event> eventsSubscribed;
+	
+	
+	public List<Event> getEventsSubscribed() {
+		return eventsSubscribed;
+	}
 
+	public void setEventsSubscribed(List<Event> eventsSubscribed) {
+		this.eventsSubscribed = eventsSubscribed;
+	}
+
+	*/
+	/*
+	@OneToMany(mappedBy="alumnus")
+	Set<CompositeTable> subscribedEvents;
+	
+	
+	
+	
+
+	public Set<CompositeTable> getSubscribedEvents() {
+		return subscribedEvents;
+	}
+
+	public void setSubscribedEvents(Set<CompositeTable> subscribedEvents) {
+		this.subscribedEvents = subscribedEvents;
+	}
+	
+	*/
 	public Integer getAlumnusId() {
 		return alumnusId;
 	}

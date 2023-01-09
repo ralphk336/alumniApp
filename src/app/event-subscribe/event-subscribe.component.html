@@ -1,0 +1,19 @@
+<div class="searchContainer">
+    <input [(ngModel)]="searchString" type="text" class="searchBar" name="searchBar"
+    placeholder="Event name">
+    <button class="searchButton" (click)="searchForEvent()">search</button>
+</div>
+<div class="cardContainer">
+    <div *ngFor="let event of events">
+        <p-card header={{event.eventName}} subheader={{event.formattedDate}} [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <div style="height: 16px"></div>
+            <ng-template pTemplate="header">
+                <!--<img alt="Card" src="assets/showcase/images/usercard.png">-->
+            </ng-template>
+            <p>{{event.eventDescription}}</p>
+            <ng-template pTemplate="footer">
+                <p-button label="subscribe" icon="pi pi-check" (click)="subscribeEvent(event)"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
