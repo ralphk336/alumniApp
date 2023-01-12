@@ -9,11 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alumni.dto.Alumnus;
 import com.alumni.dto.Event;
+import com.alumni.dto.Subscriber;
 import com.alumni.repository.EventRepository;
 
 @RestController
@@ -44,4 +47,15 @@ public class EventController {
 		}
 		return new ResponseEntity<List<Event>>(events,HttpStatus.OK);
 	}
+	
+	@GetMapping("/alumnus/{alumnusId}")
+	public ResponseEntity<List<Event>> getEventSubscriberList(@PathVariable("alumnusId") Integer alumnusId){
+		List<Event> eventsSubscribedList=eventRepository.findAllEventsRegisteredByAlumnus(alumnusId);
+		//System.out.println("Number is "+eventId);
+		if(eventsSubscribedList.size()==0) {
+			return new ResponseEntity<List<Event>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Event>>(eventsSubscribedList,HttpStatus.OK);
+	}
+	
 }

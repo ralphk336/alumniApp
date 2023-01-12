@@ -3,6 +3,7 @@
     placeholder="Event name">
     <button class="searchButton" (click)="searchForEvent()">search</button>
 </div>
+
 <div class="cardContainer">
     <div *ngFor="let event of events">
         <p-card header={{event.eventName}} subheader={{event.formattedDate}} [style]="{width: '360px'}" styleClass="p-card-shadow">
@@ -12,7 +13,13 @@
             </ng-template>
             <p>{{event.eventDescription}}</p>
             <ng-template pTemplate="footer">
-                <p-button label="subscribe" icon="pi pi-check" (click)="subscribeEvent(event)"></p-button>
+                <div *ngIf="eventsSubscribed.has(event.eventId); else notSubbed ">
+                    <button pButton type="button" icon="pi pi-check" label="Subscribed" class="p-button-success"></button>
+                </div>
+                
+            <ng-template #notSubbed>
+                <p-button label="Subscribe" (click)="subscribeEvent(event)"></p-button>
+            </ng-template>
             </ng-template>
         </p-card>
     </div>

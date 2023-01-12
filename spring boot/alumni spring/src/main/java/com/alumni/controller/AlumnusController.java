@@ -51,4 +51,14 @@ public class AlumnusController {
 		alumnusRepository.save(alumnus);
 		return new ResponseEntity<Alumnus>(alumnus,HttpStatus.OK);
 	}
+	
+	@GetMapping("/event/{eventId}")
+	public ResponseEntity<List<Alumnus>> getEventSubscriberList(@PathVariable("eventId") Integer eventId){
+		List<Alumnus> subscriberList=alumnusRepository.findAllAlumniRegisteredForAnEvent(eventId);
+		//System.out.println("Number is "+eventId);
+		if(subscriberList.size()==0) {
+			return new ResponseEntity<List<Alumnus>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Alumnus>>(subscriberList,HttpStatus.OK);
+	}
 }

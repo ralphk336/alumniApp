@@ -26,4 +26,9 @@ export class EventGetterService implements OnInit{
     console.log("fetching event data from "+url);
     return this.httpClient.get(url);
   }
+
+  getAllEventsRegisteredByAlumnus(alumnusId:number): Observable<any>{
+    var url=this.eventBaseUrl+"/alumnus/"+alumnusId;
+    return this.httpClient.get(url);
+  }
 }
