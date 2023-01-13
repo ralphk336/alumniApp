@@ -17,6 +17,7 @@ import { AllAlumniComponent } from './all-alumni/all-alumni.component';
 import { AdminSidebarDesktopComponent } from './admin-sidebar-desktop/admin-sidebar-desktop.component';
 import { AdminSidebarMobileComponent } from './admin-sidebar-mobile/admin-sidebar-mobile.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
     AllAlumniComponent,
     AdminSidebarDesktopComponent,
     AdminSidebarMobileComponent,
-    AdminHomepageComponent
+    AdminHomepageComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
