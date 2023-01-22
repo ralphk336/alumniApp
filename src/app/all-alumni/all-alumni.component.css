@@ -1,3 +1,10 @@
+.tableContainer{
+    width: 93vw;
+    margin-left: 3vw;
+}
+
+
+/*
 .container{
     width: 100vw;
     height: 100vh;
@@ -46,3 +53,4 @@ td,th{
         width: 100vw;
     }
 }
+*/

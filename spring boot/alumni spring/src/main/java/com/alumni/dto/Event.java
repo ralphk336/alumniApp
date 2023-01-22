@@ -1,12 +1,19 @@
 package com.alumni.dto;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,8 +33,42 @@ public class Event {
 	
 	@Column(name = "event_date", columnDefinition = "TIMESTAMP")
 	private LocalDateTime eventDate;
+	
+	
+	/*
+	@ManyToMany
+	@JoinTable(name="my_join_table", joinColumns=@JoinColumn(name="event_id"),
+	inverseJoinColumns=@JoinColumn(name="alumnus_id"))
+	List<Alumnus> subscribedAlumni;
+	
+	public List<Alumnus> getSubscribedAlumni() {
+		return subscribedAlumni;
+	}
 
 
+	public void setSubscribedAlumni(List<Alumnus> subscribedAlumni) {
+		this.subscribedAlumni = subscribedAlumni;
+	}
+
+	*/
+	/*
+	@OneToMany(mappedBy="event")
+	@JoinColumn(name = "subscriptions", referencedColumnName = "alumnusId")
+	Set<CompositeTable> subscribedEvents;
+	)
+	
+	
+
+	public Set<CompositeTable> getSubscribedEvents() {
+		return subscribedEvents;
+	}
+
+
+	public void setSubscribedEvents(Set<CompositeTable> subscribedEvents) {
+		this.subscribedEvents = subscribedEvents;
+	}
+
+	*/
 	public Integer getEventId() {
 		return eventId;
 	}

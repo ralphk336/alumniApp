@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ImageGetterService } from '../image-getter.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  headerSrc="../assets/wider.jpg";
+  headerSrc:any="../assets/wider.jpg";
+  
+  constructor(
+  imageGetter : ImageGetterService
+  ){
+    imageGetter.getHeader().subscribe(data=>{
+      console.log("gotten image");
+      const reader= new FileReader();
+      reader.onload=(e)=>{this.headerSrc=e.target?.result}
+      reader.readAsDataURL(data);
+    })
+  }
 }

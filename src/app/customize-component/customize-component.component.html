@@ -1,0 +1,10 @@
+<app-admin-menubar></app-admin-menubar>
+<div class="container"> 
+    <div></div>
+    <p-fileUpload  name="file" url="http://localhost:8080/image" accept="image/*" (onUpload)="uploadDone($event)" (onError)="errorFunction($event)">
+        <ng-template pTemplate="toolbar">
+            <div class="fileLabel">Upload the header image</div>
+        </ng-template>
+    </p-fileUpload>
+    <p-toast position="bottom-center"></p-toast>
+</div>

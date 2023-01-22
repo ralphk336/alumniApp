@@ -1,1 +1,35 @@
-<p>alumni-between works!</p>
+<app-admin-menubar></app-admin-menubar>
+<div class="searchContainer">
+    <span class="p-float-label">
+    <input id="start-year" type="text" pInputText placeholder="Start Year" [(ngModel)]="startYear">
+    <label for="start-year">Start Year</label>
+    </span>
+
+    <span class="p-float-label">
+        <input id="end-year" type="text" pInputText placeholder="End Year" [(ngModel)]="endYear">
+        <label for="end-year">End Year</label>
+    </span>
+    <p-button label="search" (click)="findAlumniBetween()"></p-button>
+</div>
+<p-table [value]="alumni" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%">Id</th>
+            <th style="width:28%">Name</th>
+            <th style="width:28%">Email</th>
+            <th style="width:19%">Phone</th>
+            <th style="width:15%;">Completion Year</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-alumnus>
+        <tr>
+            <td>{{alumnus.alumnusId}}</td>
+            <td>{{alumnus.name}}</td>
+            <td>{{alumnus.email}}</td>
+            <td>{{alumnus.phoneNumber}}</td>
+            <td>{{alumnus.completionYear}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<ng-template #hasNoDataBlock><h4>No data to show yet</h4></ng-template>
