@@ -33,6 +33,10 @@ export class EventSubscribeComponent implements OnInit{
   }
 
   ngOnInit(): void {
+   this.getAllEvents();
+  }
+
+  getAllEvents(){
     this.eventGetter.getAllEvents().subscribe(data=>{
       this.assignMembersList(data);  
       }

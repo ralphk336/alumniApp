@@ -1,0 +1,33 @@
+::ng-deep .p-fileupload {background-color: aqua; width: 50vw;}
+/*::ng-deep .p-fileupload-choose {background-color: blue;}*/
+/*::ng-deep .p-fileupload .p-button {background-color: lime;}*/
+
+.container{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.fileLabel{
+    margin-top: 2vh;
+    font-size: 1.5em;
+}
+
+#doneBtn{
+    max-width: 50vw;
+}
+
+@media only screen and (max-width : 1280px){
+    ::ng-deep .p-fileupload {background-color: aqua; width: 95vw;}
+    ::ng-deep .p-fileupload .p-button {margin-top: 1vh;}*/
+
+    
+    #doneBtn{
+        align-self:center;
+        width: 50vw;
+    }
+    
+}

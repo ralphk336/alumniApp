@@ -1,7 +1,8 @@
 <div class="searchContainer">
     <input [(ngModel)]="searchString" type="text" class="searchBar" name="searchBar"
     placeholder="Event name">
-    <button class="searchButton" (click)="searchForEvent()">search</button>
+    <button pButton class="p-button-sm" (click)="searchForEvent()">Search</button>
+    <button pButton class="p-button-sm" (click)="getAllEvents()">All</button>
 </div>
 
 <div class="cardContainer">

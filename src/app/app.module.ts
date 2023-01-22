@@ -4,10 +4,18 @@ import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+
 import { TableModule } from 'primeng/table'
 import { PaginatorModule } from 'primeng/paginator';
 import {CardModule} from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import {MenubarModule } from 'primeng/menubar'
+import { InputTextModule } from 'primeng/inputtext';
+import {DropdownModule} from 'primeng/dropdown';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +30,8 @@ import { AdminSidebarMobileComponent } from './admin-sidebar-mobile/admin-sideba
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { EventSubscribeComponent } from './event-subscribe/event-subscribe.component';
 import { AlumnusSidebarMobileComponent } from './alumnus-sidebar-mobile/alumnus-sidebar-mobile.component';
+import { AdminMenubarComponent } from './admin-menubar/admin-menubar.component';
+import { CustomizeComponentComponent } from './customize-component/customize-component.component';
 
 @NgModule({
   declarations: [
@@ -35,18 +45,27 @@ import { AlumnusSidebarMobileComponent } from './alumnus-sidebar-mobile/alumnus-
     AdminSidebarMobileComponent,
     AdminHomepageComponent,
     EventSubscribeComponent,
-    AlumnusSidebarMobileComponent
+    AlumnusSidebarMobileComponent,
+    AdminMenubarComponent,
+    CustomizeComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgFor,
     HttpClientModule,
+    BrowserAnimationsModule,
     NgIf,
     TableModule,
     PaginatorModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    MenubarModule,
+    InputTextModule,
+    DropdownModule,
+    FileUploadModule,
+    ToastModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
