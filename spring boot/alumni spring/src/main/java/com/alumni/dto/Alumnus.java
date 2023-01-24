@@ -26,9 +26,20 @@ public class Alumnus {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
+	 
+	@Column(name="password")
+	private String password;
 
 	public Integer getAlumnusId() {
 		return alumnusId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setAlumnusId(Integer alumnusId) {

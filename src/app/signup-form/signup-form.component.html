@@ -1,1 +1,94 @@
-<p>signup-form works!</p>
+<body>
+    <div class="container">
+    
+    <div class="the-logo">
+      <img src="../../assets/scl.jpg" alt="">
+      <h1>the  Guild</h1>
+    </div>
+    
+    
+    <div class="signup-form">
+    
+    
+    <form class="form" #userForm="ngForm">
+      <h1 id="form-title" st> New Account</h1>
+    
+     <!-- {{userForm.value | json}} --> 
+    
+     <!-- {{memberModel | json}}--> 
+      <div>
+         <input class="input-box" type="text" #name="ngModel" placeholder="First Name" name="firstName"
+          [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="alumnusModel.name" required>
+          
+         <small class="text-danger" [class.none]="name.valid || name.untouched">First Name is rquired</small> 
+       
+      </div>
+      
+      <div>
+        <input class="input-box" type="text" #email="ngModel" placeholder="Enter Email" name="email" 
+        [class.is-invalid]="email.invalid && email.touched"
+        [(ngModel)]="alumnusModel.email" required>
+    
+        <small class="text-danger" [class.none]="email.valid || email.untouched">Email Name is rquired</small>
+    
+    
+      </div>
+    
+      <div>
+        <input class="input-box" type="text" #phone="ngModel" placeholder="phone number" name="phoneNumber"
+         [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="alumnusModel.phoneNumber" required>
+         
+        <small class="text-danger" [class.none]="phone.valid || name.untouched">phone number is rquired</small> 
+      
+     </div>
+    
+     <div>
+      <input class="input-box" type="number" #year="ngModel" placeholder="year of completion" name="completionYear"
+       [class.is-invalid]="year.invalid && year.touched" [(ngModel)]="alumnusModel.completionYear" required>
+       
+      <small class="text-danger" [class.none]="year.valid || year.untouched">completion year is rquired</small> 
+    
+    </div>
+    
+      <!--
+        <select>
+          <option>Select institution</option>
+          <option *ngFor="let institution of listedInstitutions">{{institution}}</option>
+        </select>
+    
+        -->
+    
+      <div>
+        <input class="input-box" type="password"  #password="ngModel" 
+        [class.is-invalid]="password.touched && password.invalid" placeholder="Enter Password" name="password"
+        [(ngModel)]="alumnusModel.password" required>
+    
+        <small class="text-danger" [class.none]="password.valid || password.untouched">Password is rquired</small>
+    
+       <!--
+        <div *ngIf="password.errors && (password.invalid || password.touched)">
+          <small class="text-danger" *ngIf="password.errors['required']"> Password is required</small>
+          <small class="text-danger" *ngIf="password.errors['pattern']"> password should not be less than 10 digits</small> 
+        </div>
+      -->
+    
+        </div>
+    
+        <button (click)="registerAlumnus()">Register </button>
+    
+        
+    
+        <p>By clicking Register, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive email notifications from us.</p>
+    
+        <a id="anchor" href="#">  Already have an account</a>
+    
+      
+    </form>
+    
+        
+        
+    </div>
+    
+    </div>
+    
+    </body>

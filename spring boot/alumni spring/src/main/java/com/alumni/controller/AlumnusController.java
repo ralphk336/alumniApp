@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.alumni.repository.AlumnusRepository;
 
 @RestController
 @RequestMapping("/api/alumnus")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AlumnusController {
 	AlumnusRepository alumnusRepository;
 	
@@ -28,10 +30,11 @@ public class AlumnusController {
 	}
 	
 	@GetMapping("")
-	public ResponseEntity<List<Alumnus>> getAllAlumni(){
+	public ResponseEntity<List<Alumnus>>  getAllAlumni(){
 		Iterable<Alumnus> allAlumniIterable=alumnusRepository.findAll();
 		LinkedList<Alumnus> alumniList=new LinkedList<>();
 		for(Alumnus alumnus:allAlumniIterable) {
+			alumnus.setPassword(null);
 			alumniList.add(alumnus);
 		}
 		
@@ -44,6 +47,14 @@ public class AlumnusController {
 		List<Alumnus> alumniList=alumnusRepository.findAlumniByCompletionYear(year);
 		return new ResponseEntity<List<Alumnus>>(alumniList,HttpStatus.OK);
 	}
+	
+	@GetMapping ("/year/{startYear}/{endYear}")
+	public ResponseEntity<List<Alumnus>>  
+	findAlumniByCompletionYearBetween(@PathVariable("startYear ") final Integer startYear, @PathVariable("endYear") final Integer endYear){
+	      List<Alumnus> alumniListFromYtoY =alumnusRepository.findAlumniByCompletionYearBetween(startYear, endYear);
+	      return new ResponseEntity<List<Alumnus>> (alumniListFromYtoY, HttpStatus.OK);
+	}
+	
 	
 		
 	@PostMapping(value="",consumes=MediaType.APPLICATION_JSON_VALUE)
