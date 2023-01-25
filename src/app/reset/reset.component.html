@@ -1,0 +1,21 @@
+<div class="reset-wrapper">
+    <div class="reset">
+        <div class="logo-div">
+            <img src="assets/img.png" alt="logo">
+        </div>
+        <div class="reset-card">
+            <h4>Password Reset</h4>
+            <p>Please enter your email address to reset password</p>
+             <form [formGroup]="resetForm">
+                <input formControlName="email" class="form-input" type="email" placeholder="Email Address">
+                <div *ngIf="resetForm.get('email')?.touched && resetForm.get('email')?.errors?.['required']" class="error">Please enter an email</div>
+                <div *ngIf="resetForm.get('email')?.touched && resetForm.get('email')?.errors?.['email']" class="error">Please enter a valid email</div>
+                <button (click)="reset()" [disabled]="!resetForm.valid" class="reset-button">Reset</button>
+             </form>
+            <div class="links">
+                <a href="javascript:void(0);" routerLink="/login">Log In</a>
+                <a href="">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+</div>
