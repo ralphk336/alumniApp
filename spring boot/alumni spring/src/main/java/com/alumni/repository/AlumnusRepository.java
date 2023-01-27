@@ -8,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 import com.alumni.dto.Alumnus;
 
 public interface AlumnusRepository extends CrudRepository<Alumnus, Integer> {
+	Alumnus findByEmail(String email);
+	
 	public List<Alumnus> findAlumniByCompletionYear(Integer year);
 	public List<Alumnus> findAlumniByCompletionYearBetween(Integer startYear, Integer endYear);
 
