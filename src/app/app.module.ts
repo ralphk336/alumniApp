@@ -4,8 +4,19 @@ import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+
 import { TableModule } from 'primeng/table'
 import { PaginatorModule } from 'primeng/paginator';
+import {CardModule} from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import {MenubarModule } from 'primeng/menubar'
+import { InputTextModule } from 'primeng/inputtext';
+import {DropdownModule} from 'primeng/dropdown';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ToastModule} from 'primeng/toast';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +29,10 @@ import { AdminSidebarDesktopComponent } from './admin-sidebar-desktop/admin-side
 import { AdminSidebarMobileComponent } from './admin-sidebar-mobile/admin-sidebar-mobile.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { EventSubscribeComponent } from './event-subscribe/event-subscribe.component';
+import { AlumnusSidebarMobileComponent } from './alumnus-sidebar-mobile/alumnus-sidebar-mobile.component';
+import { AdminMenubarComponent } from './admin-menubar/admin-menubar.component';
+import { CustomizeComponentComponent } from './customize-component/customize-component.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +45,29 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     AdminSidebarDesktopComponent,
     AdminSidebarMobileComponent,
     AdminHomepageComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    EventSubscribeComponent,
+    AlumnusSidebarMobileComponent,
+    AdminMenubarComponent,
+    CustomizeComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgFor,
     HttpClientModule,
+    BrowserAnimationsModule,
     NgIf,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    CardModule,
+    ButtonModule,
+    MenubarModule,
+    InputTextModule,
+    DropdownModule,
+    FileUploadModule,
+    ToastModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

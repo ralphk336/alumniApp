@@ -1,9 +1,34 @@
-<app-header></app-header>
-<div id="container">
+<app-admin-menubar></app-admin-menubar>
+<div class="tableContainer">
+<div><h1>Alumni List</h1></div>
+<p-table *ngIf="hasData;else hasNoDataBlock" [value]="alumni" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%">Id</th>
+            <th style="width:28%">Name</th>
+            <th style="width:28%">Email</th>
+            <th style="width:19%">Phone</th>
+            <th style="width:15%;">Completion Year</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-alumnus>
+        <tr>
+            <td>{{alumnus.alumnusId}}</td>
+            <td>{{alumnus.name}}</td>
+            <td>{{alumnus.email}}</td>
+            <td>{{alumnus.phoneNumber}}</td>
+            <td>{{alumnus.completionYear}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<ng-template #hasNoDataBlock><h4>No data to show yet</h4></ng-template>
+</div>
+<!--
+    <div id="container">
     <div id="contentArea">
         <div class="content">
             <div><h1>Alumni List</h1></div>
-            <!--<p-table *ngIf="hasData" [value]="members" [paginator]="true" [rows]="12">-->
                 <p-table *ngIf="hasData;else hasNoDataBlock" [value]="members" [paginator]="true" [rows]="10">
                 <ng-template pTemplate="header">
                     <tr>
@@ -30,3 +55,4 @@
         <app-admin-sidebar-desktop></app-admin-sidebar-desktop>
     </div>
 </div>
+-->

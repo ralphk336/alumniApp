@@ -1,0 +1,42 @@
+.hamburger{
+    position: fixed;
+    z-index: 99;
+    top: 15px;
+    left: 20px;
+}
+
+.sidebar{
+    position: fixed;
+    background-color: rgb(20, 238, 129);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+}
+
+.sidebar ul{
+    list-style-type: none;
+}
+
+.sidebar ul a{
+    text-decoration: none;
+
+}
+
+.sidebar ul li{
+    text-align: center;
+    color: white;
+    font-size: 1.75em;
+    margin: 5vw 0;
+    border-bottom: 2px solid white;
+}
+
+
+
+.hiddenElement{
+    display: none;
+}

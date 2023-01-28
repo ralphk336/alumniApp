@@ -2,5 +2,11 @@
 * {
     margin: 0;
     padding: 0;
-    inset: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #A5FAFA;
+    overflow-y: scroll;
 }
