@@ -3,5 +3,5 @@ export class Alumnus {
     email: string="";
     phoneNumber: string="";
     completionYear: string="";
-    password : string="";
+   // password : string="";
 }

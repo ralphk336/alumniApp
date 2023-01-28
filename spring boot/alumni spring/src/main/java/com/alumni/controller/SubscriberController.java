@@ -34,14 +34,13 @@ public class SubscriberController {
 //			return  ResponseEntity.ok("subscribed to an event");
 //	}
 	 
-	 @GetMapping ("/{eventId}/{userId}")
-		public ResponseEntity<string>  
-		findeventIduserId(@PathVariable("eventId") final Integer eventId, @PathVariable("userId") final Integer userId){
-			
+//	 @GetMapping ("/{eventId}/{userId}")
+//		public ResponseEntity<string>  
+//		findeventIduserId(@PathVariable("eventId") final Integer eventId, @PathVariable("userId") final Integer userId){
+//			
 			
 
 		     
-		}
 		
 	 
 	 

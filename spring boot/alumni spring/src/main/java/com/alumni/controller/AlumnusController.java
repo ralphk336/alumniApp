@@ -34,7 +34,7 @@ public class AlumnusController {
 		Iterable<Alumnus> allAlumniIterable=alumnusRepository.findAll();
 		LinkedList<Alumnus> alumniList=new LinkedList<>();
 		for(Alumnus alumnus:allAlumniIterable) {
-			alumnus.setPassword(null);
+			//alumnus.setPassword(null);
 			alumniList.add(alumnus);
 		}
 		
