@@ -10,3 +10,7 @@ body{
     background-color: #A5FAFA;
     overflow-y: scroll;
 }
+
+.error{
+    color: red;
+}
