@@ -34,7 +34,6 @@ public class Alumnus {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
-<<<<<<< HEAD
 	
 	/*
 	@ManyToMany(mappedBy="subscribedAlumni")
@@ -44,11 +43,6 @@ public class Alumnus {
 	public List<Event> getEventsSubscribed() {
 		return eventsSubscribed;
 	}
-=======
-	 
-//	@Column(name="password")
-//	private String password;
->>>>>>> 46d434f20459199c1f4ee640d8402faa64a1dee7
 
 	public void setEventsSubscribed(List<Event> eventsSubscribed) {
 		this.eventsSubscribed = eventsSubscribed;
@@ -76,16 +70,6 @@ public class Alumnus {
 		return alumnusId;
 	}
 
-<<<<<<< HEAD
-=======
-//	public String getPassword() {
-//		return password;
-//	}
-
-//	public void setPassword(String password) {
-//		this.password = password;
-//	}
->>>>>>> 46d434f20459199c1f4ee640d8402faa64a1dee7
 
 	public void setAlumnusId(Integer alumnusId) {
 		this.alumnusId = alumnusId;
