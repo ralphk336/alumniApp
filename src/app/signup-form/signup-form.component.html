@@ -61,7 +61,7 @@
       <div>
         <input class="input-box" type="password"  #password="ngModel" 
         [class.is-invalid]="password.touched && password.invalid" placeholder="Enter Password" name="password"
-        [(ngModel)]="alumnusModel.password" required>
+        [(ngModel)]="userModel.password" required>
     
         <small class="text-danger" [class.none]="password.valid || password.untouched">Password is rquired</small>
     
