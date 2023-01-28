@@ -48,6 +48,14 @@ public class UserController {
 		return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
 	}
 	
+	@PostMapping("")
+	public ResponseEntity<User> addUser(@RequestBody User user){
+		user.setRole("alumnus");
+		userRepository.save(user);
+		return new ResponseEntity<User>(user,HttpStatus.CREATED);
+	}
+	
+	
 	@GetMapping("/details")
 	public ResponseEntity<User> getCurrentUser(){
 		User usr=getLoggedInUser();

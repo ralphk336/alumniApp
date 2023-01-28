@@ -63,15 +63,6 @@ public class AlumnusController {
 	}
 	
 	
-	@GetMapping("/year/{startYear}/{endYear}")
-	public ResponseEntity<List<Alumnus>> getAlumniBetween(@PathVariable("startYear") final Integer startYear, @PathVariable("endYear") final Integer endYear){
-		if(startYear.compareTo(endYear)>0) {
-			return new ResponseEntity<List<Alumnus>>(HttpStatus.BAD_REQUEST);
-		}
-		List<Alumnus> alumniList=alumnusRepository.findAlumniByCompletionYearBetween(startYear, endYear);
-		return new ResponseEntity<List<Alumnus>>(alumniList,HttpStatus.OK);
-	}
-	
 	@GetMapping("/event/{eventId}")
 	public ResponseEntity<List<Alumnus>> getEventSubscriberList(@PathVariable("eventId") Integer eventId){
 		List<Alumnus> subscriberList=alumnusRepository.findAllAlumniRegisteredForAnEvent(eventId);

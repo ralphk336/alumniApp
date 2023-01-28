@@ -42,7 +42,17 @@ public class SecurityConfiguration {
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
 		httpSecurity.cors();
 		httpSecurity.csrf().disable();
-		httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
+		
+		
+		httpSecurity.authorizeHttpRequests()
+        	.requestMatchers("/api/alumnus").permitAll()
+        	.requestMatchers("/api/user").permitAll()
+        	.anyRequest().authenticated();
+        	
+        	httpSecurity.headers().frameOptions().disable();
+        
+
+        	//httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
 		httpSecurity.httpBasic();
 		//httpSecurity.formLogin();
 		return httpSecurity.build();
