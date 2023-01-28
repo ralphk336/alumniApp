@@ -33,6 +33,9 @@ import { EventSubscribeComponent } from './event-subscribe/event-subscribe.compo
 import { AlumnusSidebarMobileComponent } from './alumnus-sidebar-mobile/alumnus-sidebar-mobile.component';
 import { AdminMenubarComponent } from './admin-menubar/admin-menubar.component';
 import { CustomizeComponentComponent } from './customize-component/customize-component.component';
+import { LoginComponent } from './login/login.component';
+import { ResetComponent } from './reset/reset.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { CustomizeComponentComponent } from './customize-component/customize-com
     AlumnusSidebarMobileComponent,
     AdminMenubarComponent,
     CustomizeComponentComponent,
+    LoginComponent,
+    ResetComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,9 @@ import { CustomizeComponentComponent } from './customize-component/customize-com
     InputTextModule,
     DropdownModule,
     FileUploadModule,
-    ToastModule
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
