@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { User } from '../user';
 export class LoginComponent {
   loginForm: FormGroup
   constructor(
+    private router: Router,
     private formBuilder: FormBuilder,
     private httpClient:HttpClient
     ) {
@@ -19,6 +21,7 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
+  
   get f() { return this.loginForm.controls }
 
   login() {
@@ -56,10 +59,16 @@ export class LoginComponent {
         localStorage.setItem('role',(data as User).role);
         console.log("User has role" , localStorage.getItem('role'));
         console.log("Credentials are ",localStorage.getItem('authorization'));
+       if (localStorage.getItem('role') == "admin"){
+        this.router.navigate(['/allAlumni']);
+        console.log("success")
+       }
+
       },
       error=>{
         console.log("Error while logging in. Reason :",error);
       }
+      
     )
 
   }
