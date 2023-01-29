@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { data } from 'jquery';
 import { AlumniCreateService } from '../alumni-create.service';
 import { Alumnus } from '../alumnus';
 import { User } from '../user';
 import { UserCreateService } from '../user-create.service';
+
 
 
 @Component({
@@ -18,7 +20,7 @@ alumnusModel=new Alumnus();
 
 userModel =new User();
 
-constructor(private createAlumni :AlumniCreateService, private createUser:UserCreateService){
+constructor(private createAlumni :AlumniCreateService, private createUser:UserCreateService, private router:Router){
 
 
 }
@@ -35,6 +37,8 @@ registerAlumnus(){
 
  this.createUser.registerUser(this.userModel).subscribe(data=>{
   console.log("successfully added user", data)
+  this.router.navigate(['/login']);
+
  })
 }
 
