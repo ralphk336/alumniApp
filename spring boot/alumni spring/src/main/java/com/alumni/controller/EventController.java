@@ -59,9 +59,14 @@ public class EventController {
 		return new ResponseEntity<List<Event>>(events,HttpStatus.OK);
 	}
 	
-	@GetMapping("/alumnus/{alumnusId}")
-	public ResponseEntity<List<Event>> getEventSubscriberList(@PathVariable("alumnusId") Integer alumnusId){
-		List<Event> eventsSubscribedList=eventRepository.findAllEventsRegisteredByAlumnus(alumnusId);
+	@GetMapping("/subscribed")
+	public ResponseEntity<List<Event>> getEventSSubscribedByAlumnus(){
+		Alumnus alumnus=getAlumnusFromSession();
+		if(alumnus==null) {
+			return new ResponseEntity<List<Event>>(HttpStatus.NO_CONTENT);
+		}
+		
+		List<Event> eventsSubscribedList=eventRepository.findAllEventsRegisteredByAlumnus(alumnus.getAlumnusId());
 		//System.out.println("Number is "+eventId);
 		if(eventsSubscribedList.size()==0) {
 			return new ResponseEntity<List<Event>>(HttpStatus.NO_CONTENT);
@@ -71,8 +76,8 @@ public class EventController {
 	
 	@GetMapping("/subscribe/{eventId}")
 	public ResponseEntity<HttpStatus> subscribeToEvent(@PathVariable("eventId") Integer eventId){
-		User usr=((CustomUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
-		Alumnus alumnus=alumnusRepository.findByEmail(usr.getUsername());
+		//User usr=((CustomUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
+		Alumnus alumnus=getAlumnusFromSession();//alumnusRepository.findByEmail(usr.getUsername());
 		if(alumnus==null) {
 			return new ResponseEntity<HttpStatus>(HttpStatus.NOT_FOUND);
 		}
@@ -82,5 +87,11 @@ public class EventController {
 			return new ResponseEntity<HttpStatus>(HttpStatus.CONFLICT);
 		}
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	}
+	
+	Alumnus getAlumnusFromSession() {
+		User usr=((CustomUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
+		Alumnus alumnus=alumnusRepository.findByEmail(usr.getUsername());
+		return alumnus;
 	}
 }
