@@ -1,0 +1,34 @@
+.wrapper{
+    margin: 0px auto;
+    width: 820px;
+}
+@media screen and (max-width: 992px) {
+    .wrapper {
+        width: 100% !important;
+        padding: auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .wrapper {
+        width: 100% !important;
+        text-align: center;
+    }
+    .topnav{
+        padding: 0;
+        width: 100% !important;
+    }
+    .main{
+        width: 100% !important;
+    }
+    .events{
+        width: 100% !important;
+        padding: 10px;
+    }
+    .site-slogan{
+        width: 100%;
+    }
+    .legger{
+        width: 100%;
+    }
+}

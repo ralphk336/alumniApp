@@ -36,6 +36,12 @@ import { CustomizeComponentComponent } from './customize-component/customize-com
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContainerComponent } from './container/container.component';
+import { NavComponent } from './nav/nav.component';
+import { EventsComponent } from './events/events.component';
+import { ContactComponent } from './contact/contact.component';
+import { MainComponent } from './main/main.component';
+import { LeggerComponent } from './legger/legger.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +61,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomizeComponentComponent,
     LoginComponent,
     ResetComponent,
+    ContainerComponent,
+    NavComponent,
+    EventsComponent,
+    ContactComponent,
+    MainComponent,
+    LeggerComponent,
   ],
   imports: [
     BrowserModule,
