@@ -51,6 +51,15 @@ export class EventSubscribeComponent implements OnInit{
     //TODO: add code to post data to backend
 
     //ngif will display the subscribed button
+
+    this.eventGetter.subscribeToEvent(event.eventId).subscribe(
+      data=>{
+        console.log("Subscribed alumnus to event with id: ",event.eventId);
+      },
+      error=>{
+        console.log("User already subscribed");
+      }
+    )
     this.eventsSubscribed.add(event.eventId);
   }
 

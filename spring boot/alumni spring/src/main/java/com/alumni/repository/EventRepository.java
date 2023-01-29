@@ -2,10 +2,13 @@ package com.alumni.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.alumni.dto.Event;
+
+import jakarta.transaction.Transactional;
 
 //CrudRepository<Event, data type of @Id field of Event>
 
@@ -19,5 +22,13 @@ public interface EventRepository extends CrudRepository<Event, Integer> {
 			,nativeQuery=true
 			)
 	List<Event> findAllEventsRegisteredByAlumnus(Integer alumnusId);
+	
+	@Modifying
+	@Transactional
+	@Query( 
+			value="INSERT INTO subscribers(event_id,alumnus_id) VALUES (?1,?2)"
+			,nativeQuery=true
+			)
+	int subscribeToEvent(Integer eventId, Integer alumnusId);
 	
 }
