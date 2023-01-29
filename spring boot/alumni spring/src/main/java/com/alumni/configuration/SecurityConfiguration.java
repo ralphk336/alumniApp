@@ -49,6 +49,7 @@ public class SecurityConfiguration {
 		httpSecurity.authorizeHttpRequests()
         	.requestMatchers("/api/alumnus").permitAll()
         	.requestMatchers("/api/user").permitAll()
+        	.requestMatchers("/api/image").permitAll()
         	.anyRequest().authenticated();
         	
         	httpSecurity.headers().frameOptions().disable();

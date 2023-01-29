@@ -48,10 +48,10 @@ public class AlumnusController {
 	}
 	
 	@GetMapping ("/year/{startYear}/{endYear}")
-	public ResponseEntity<List<Alumnus>>  
-	findAlumniByCompletionYearBetween(@PathVariable("startYear ") final Integer startYear, @PathVariable("endYear") final Integer endYear){
-	      List<Alumnus> alumniListFromYtoY =alumnusRepository.findAlumniByCompletionYearBetween(startYear, endYear);
-	      return new ResponseEntity<List<Alumnus>> (alumniListFromYtoY, HttpStatus.OK);
+	public ResponseEntity<List<Alumnus>>  findAlumniByCompletionYearBetween(@PathVariable("startYear") final Integer startYear, @PathVariable("endYear") final Integer endYear){
+	    System.out.println("Start Year :"+ startYear + "end year " + endYear);  
+		List<Alumnus> alumniListFromYtoY =alumnusRepository.findAlumniByCompletionYearBetween(startYear, endYear);
+	    return new ResponseEntity<List<Alumnus>> (alumniListFromYtoY, HttpStatus.OK);
 	}
 	
 	

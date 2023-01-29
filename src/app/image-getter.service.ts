@@ -14,7 +14,7 @@ export class ImageGetterService {
   }
 
   getHeader():Observable<any>{
-    return this.httpClient.get("http://localhost:8080/image",{responseType: 'blob'});
+    return this.httpClient.get("http://localhost:8080/api/image",{responseType: 'blob'});
 
   }
 }
