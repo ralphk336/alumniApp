@@ -1,5 +1,19 @@
-.site-slogan{
-    width: 420px;
-    margin-left: 300px;
-    text-align: left;
+.contact {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.site-slogan p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px 0;
+  }
+
+  .site-slogan p {
+    font-size: 14px;
+  }
 }

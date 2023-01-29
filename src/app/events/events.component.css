@@ -1,52 +1,22 @@
 .events{
-    display: flex;
-    background-color: #ffffff;
+  display: flex;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.events-announcements {
-    background-color: #ffffff;
-    overflow: hidden;
+
+
+.event {
+  width: calc(33.33% - 20px);
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .event {
+    width: 100%;
   }
-  
-  /* Style the links inside the navigation bar */
-  .events-announcements a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .events-announcements a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add an active class to highlight the current page */
-  .events-announcements a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-.img-responsive{
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-.site-image1{
-    padding: 5px 3px;
-    margin-left: 10px;
-}
-.site-image2{
-    padding: 5px 3px;
-    margin-left: 10px;
-}
-.site-image3{
-    padding: 5px 3px;
-    margin-left: 10px;
-}
-h1{
-    font-size: 9px;
-    color: #0000FF;
 }

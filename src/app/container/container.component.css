@@ -24,6 +24,9 @@
     .events{
         width: 100% !important;
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
     .site-slogan{
         width: 100%;

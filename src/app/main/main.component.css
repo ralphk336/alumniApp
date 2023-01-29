@@ -4,3 +4,12 @@
     display: flex;
     background-color: #A5FAFA;
 }
+@media (max-width: 768px) {
+  .main {
+    height: auto;
+  }
+  .site-image img {
+    width: 100%;
+    height: auto;
+  }
+}
