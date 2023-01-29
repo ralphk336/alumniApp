@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,9 @@ import com.alumni.repository.UserRepository;
 public class UserController {
 	UserRepository userRepository;
 	AlumnusRepository alumnusRepository;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	
 	@Autowired
@@ -53,6 +57,7 @@ public class UserController {
 	@PostMapping("")
 	public ResponseEntity<User> addUser(@RequestBody User user){
 		user.setRole("alumnus");
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 		return new ResponseEntity<User>(user,HttpStatus.CREATED);
 	}

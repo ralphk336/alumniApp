@@ -17,6 +17,10 @@ export class HeaderComponent {
       const reader= new FileReader();
       reader.onload=(e)=>{this.headerSrc=e.target?.result}
       reader.readAsDataURL(data);
+    },
+    error=>{
+      console.log("Could not get header image from the server,using default image. Reason :",error);
+      this.headerSrc="../assets/wider.jpg";
     })
   }
 }
