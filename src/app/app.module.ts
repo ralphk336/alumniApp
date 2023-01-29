@@ -36,6 +36,7 @@ import { CustomizeComponentComponent } from './customize-component/customize-com
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomizeComponentComponent,
     LoginComponent,
     ResetComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

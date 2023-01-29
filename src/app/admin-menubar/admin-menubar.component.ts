@@ -58,7 +58,8 @@ export class AdminMenubarComponent implements OnInit{
             ,
             {
               label: "Sign out",
-              icon : PrimeIcons.SIGN_OUT
+              icon : PrimeIcons.SIGN_OUT,
+              url : "logout"
             }
         ];
     }
