@@ -37,7 +37,7 @@ import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+// import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     LoginComponent,
     ResetComponent,
     LogoutComponent,
-    LandingPageComponent,
+//     LandingPageComponent,
   ],
   imports: [
     BrowserModule,
