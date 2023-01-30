@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LandingPageComponent} from './landing-page/landing-page.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,12 +9,14 @@ import { AccordionModule } from 'primeng/accordion';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
 
+
 //import { Checkboxmodule } from 'primeng/checkbox';
 //import { RadioButtonModule } from 'primeng/radioButton';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LandingPageComponent,
 
   ],
   imports: [
@@ -22,7 +25,7 @@ import { ButtonModule } from 'primeng/button';
     FlexLayoutModule,
     AccordionModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
     //CheckboxModule
     //RadioButtonModule
   ],

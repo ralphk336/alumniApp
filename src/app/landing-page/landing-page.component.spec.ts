@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { LandingPageComponent } from './landing-page.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,27 +9,27 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        LandingPageComponent
       ],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(LandingPageComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'alumniApp'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it(`should have as title 'AlumniSite'`, () => {
+    const fixture = TestBed.createComponent(LandingPageComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('alumniApp');
+    expect(app.title).toEqual('LandingPage');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(LandingPageComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('alumniApp app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('AlumniSite app is running!');
   });
 });
