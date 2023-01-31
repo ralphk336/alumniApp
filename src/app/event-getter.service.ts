@@ -32,7 +32,7 @@ export class EventGetterService implements OnInit{
   //   var url=this.eventBaseUrl+"/alumnus/"+alumnusId;
   //   return this.httpClient.get(url,RequestBuilder.buildHeader());
   // }
-  getAllEventsRegisteredByAlumnus(alumnusId:number): Observable<any>{
+  getAllEventsRegisteredByAlumnus(): Observable<any>{
     var url=this.eventBaseUrl+"/subscribed";
     return this.httpClient.get(url,RequestBuilder.buildHeader());
   }

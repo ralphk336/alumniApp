@@ -38,6 +38,7 @@ import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AlumnusMenubarComponent } from './alumnus-menubar/alumnus-menubar.component';
 // import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
@@ -60,6 +61,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     ResetComponent,
     LogoutComponent,
     HomepageComponent,
+    AlumnusMenubarComponent,
 //     LandingPageComponent,
   ],
   imports: [

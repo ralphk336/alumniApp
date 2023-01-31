@@ -55,12 +55,12 @@ export class EventSubscribeComponent implements OnInit{
     this.eventGetter.subscribeToEvent(event.eventId).subscribe(
       data=>{
         console.log("Subscribed alumnus to event with id: ",event.eventId);
+        this.eventsSubscribed.add(event.eventId);
       },
       error=>{
         console.log("User already subscribed");
       }
-    )
-    this.eventsSubscribed.add(event.eventId);
+    )   
   }
 
   searchForEvent(){
@@ -90,7 +90,7 @@ export class EventSubscribeComponent implements OnInit{
 
   getAllRegisteredEvents(){
     //TODO : Make this match id of currently logged in user
-    this.eventGetter.getAllEventsRegisteredByAlumnus(3).subscribe(data=>{
+    this.eventGetter.getAllEventsRegisteredByAlumnus().subscribe(data=>{
       var dt=Object.entries(data);
       for(var i=0;i<dt.length;i++){
         var event= dt[i][1] as Event;
