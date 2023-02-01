@@ -1,0 +1,24 @@
+<app-admin-menubar></app-admin-menubar>
+<div><h1>Event {{eventId}} subscribers</h1></div>
+<p-table *ngIf="subscribers.length>0;else hasNoDataBlock" [value]="subscribers" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%">Id</th>
+            <th style="width:28%">Name</th>
+            <th style="width:28%">Email</th>
+            <th style="width:19%">Phone</th>
+            <th style="width:15%;">Completion Year</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-subscriber>
+        <tr>
+            <td>{{subscriber.alumnusId}}</td>
+            <td>{{subscriber.name}}</td>
+            <td>{{subscriber.email}}</td>
+            <td>{{subscriber.phoneNumber}}</td>
+            <td>{{subscriber.completionYear}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<ng-template #hasNoDataBlock><h4>No data to show yet</h4></ng-template>

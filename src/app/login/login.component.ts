@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
 import {Router} from "@angular/router"
+import { Roles } from '../roles';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup
   constructor(
     private router: Router,
@@ -22,6 +23,17 @@ export class LoginComponent {
     })
   }
   
+  ngOnInit(): void {
+    /*
+      check if user is logged in. If they are redirect them to appropriate page
+    */
+      if(localStorage.getItem('role')==Roles.adminRole){
+        this.router.navigate(['/allAlumni']);
+      }else if(localStorage.getItem('role')==Roles.alumnusRole){
+        //TODO : REDIRECT TO ALUMNUS HOME
+        this.router.navigate(['/subscribedEvents']);
+      }
+  }
   get f() { return this.loginForm.controls }
 
   login() {
@@ -59,9 +71,12 @@ export class LoginComponent {
         localStorage.setItem('role',(data as User).role);
         console.log("User has role" , localStorage.getItem('role'));
         console.log("Credentials are ",localStorage.getItem('authorization'));
-       if (localStorage.getItem('role') == "admin"){
+       if (localStorage.getItem('role') == Roles.adminRole){
         this.router.navigate(['/allAlumni']);
         console.log("success")
+       }else if(localStorage.getItem('role')==Roles.alumnusRole){
+        //TODO : REDIRECT TO ALUMNUS HOME
+        this.router.navigate(['/subscribedEvents']);
        }
 
       },

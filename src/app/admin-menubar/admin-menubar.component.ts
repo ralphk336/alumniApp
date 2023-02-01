@@ -18,7 +18,7 @@ export class AdminMenubarComponent implements OnInit{
                     {
                         label : "All Events",
                         icon : PrimeIcons.LIST,
-                        url : "#"
+                        url : "allEvents"
                     },
                     {
                         label : "New Event",

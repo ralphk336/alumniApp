@@ -40,6 +40,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BulkEmailComponent } from './bulk-email/bulk-email.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { AlumnusMenubarComponent } from './alumnus-menubar/alumnus-menubar.component';
+import { AllEventsComponent } from './all-events/all-events.component';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 // import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
@@ -64,6 +67,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
     HomepageComponent,
     BulkEmailComponent,
     CreateEventComponent,
+    AlumnusMenubarComponent,
+    AllEventsComponent,
+    SubscribersComponent,
 //     LandingPageComponent,
   ],
   imports: [
