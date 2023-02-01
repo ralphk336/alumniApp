@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventGetterService } from '../event-getter.service';
+import { Event } from '../event';
 
 
-class Event{
-  eventId :  Number=0;
-  eventName : String="";
-  eventDescription : String="";
-  eventDate : String=""
-  //event comes in as JSON date, need to format it for display
-  formattedDate : String="";
-}
 
 @Component({
   selector: 'app-event-subscribe',
@@ -99,6 +92,17 @@ export class EventSubscribeComponent implements OnInit{
       }
       console.log("Number of events registered "+ this.eventsSubscribed.size);
     })
+  }
+
+  canSubscribe(event:Event):boolean{
+     let now=new Date();
+     let eventDate=new Date(event.eventDate.toString());
+     //console.log("Event time", eventDate.getTime(),"Now",now.getTime());
+     //if current time greater than event time
+     if(now.getTime()>eventDate.getTime()){
+      return true;
+     }
+     return false;
   }
 }
 

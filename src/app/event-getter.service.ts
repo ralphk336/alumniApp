@@ -41,4 +41,9 @@ export class EventGetterService implements OnInit{
     var url=this.eventBaseUrl+/subscribe/+eventId;
     return this.httpClient.get(url,RequestBuilder.buildHeader());
   }
+
+  getEventSubscribers(eventId:Number): Observable<any>{
+    var url="http://localhost:8080/api/alumnus/event/"+eventId;
+    return this.httpClient.get(url,RequestBuilder.buildHeader());
+  }
 }

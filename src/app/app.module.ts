@@ -39,6 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AlumnusMenubarComponent } from './alumnus-menubar/alumnus-menubar.component';
+import { AllEventsComponent } from './all-events/all-events.component';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 // import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
@@ -62,6 +64,8 @@ import { AlumnusMenubarComponent } from './alumnus-menubar/alumnus-menubar.compo
     LogoutComponent,
     HomepageComponent,
     AlumnusMenubarComponent,
+    AllEventsComponent,
+    SubscribersComponent,
 //     LandingPageComponent,
   ],
   imports: [
