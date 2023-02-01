@@ -1,15 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+
 * {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     background-color: #A5FAFA;
     overflow-y: scroll;
+    background-color: var(--surface-a);
+    font-family: var(--font-family);
+    color: var(--text-color);
 }
+
 
 .error{
     color: red;

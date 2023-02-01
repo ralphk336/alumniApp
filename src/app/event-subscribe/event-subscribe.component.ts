@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventGetterService } from '../event-getter.service';
+import { Event } from '../event';
 
 
-class Event{
-  eventId :  Number=0;
-  eventName : String="";
-  eventDescription : String="";
-  eventDate : String=""
-  //event comes in as JSON date, need to format it for display
-  formattedDate : String="";
-}
 
 @Component({
   selector: 'app-event-subscribe',
@@ -51,7 +44,16 @@ export class EventSubscribeComponent implements OnInit{
     //TODO: add code to post data to backend
 
     //ngif will display the subscribed button
-    this.eventsSubscribed.add(event.eventId);
+
+    this.eventGetter.subscribeToEvent(event.eventId).subscribe(
+      data=>{
+        console.log("Subscribed alumnus to event with id: ",event.eventId);
+        this.eventsSubscribed.add(event.eventId);
+      },
+      error=>{
+        console.log("User already subscribed");
+      }
+    )   
   }
 
   searchForEvent(){
@@ -81,7 +83,7 @@ export class EventSubscribeComponent implements OnInit{
 
   getAllRegisteredEvents(){
     //TODO : Make this match id of currently logged in user
-    this.eventGetter.getAllEventsRegisteredByAlumnus(3).subscribe(data=>{
+    this.eventGetter.getAllEventsRegisteredByAlumnus().subscribe(data=>{
       var dt=Object.entries(data);
       for(var i=0;i<dt.length;i++){
         var event= dt[i][1] as Event;
@@ -90,6 +92,17 @@ export class EventSubscribeComponent implements OnInit{
       }
       console.log("Number of events registered "+ this.eventsSubscribed.size);
     })
+  }
+
+  canSubscribe(event:Event):boolean{
+     let now=new Date();
+     let eventDate=new Date(event.eventDate.toString());
+     //console.log("Event time", eventDate.getTime(),"Now",now.getTime());
+     //if current time greater than event time
+     if(now.getTime()>eventDate.getTime()){
+      return true;
+     }
+     return false;
   }
 }
 

@@ -16,7 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ToastModule} from 'primeng/toast';
-
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,12 +36,14 @@ import { CustomizeComponentComponent } from './customize-component/customize-com
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContainerComponent } from './container/container.component';
-import { NavComponent } from './nav/nav.component';
-import { EventsComponent } from './events/events.component';
-import { ContactComponent } from './contact/contact.component';
-import { MainComponent } from './main/main.component';
-import { LeggerComponent } from './legger/legger.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BulkEmailComponent } from './bulk-email/bulk-email.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { AlumnusMenubarComponent } from './alumnus-menubar/alumnus-menubar.component';
+import { AllEventsComponent } from './all-events/all-events.component';
+import { SubscribersComponent } from './subscribers/subscribers.component';
+// import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -61,12 +63,14 @@ import { LeggerComponent } from './legger/legger.component';
     CustomizeComponentComponent,
     LoginComponent,
     ResetComponent,
-    ContainerComponent,
-    NavComponent,
-    EventsComponent,
-    ContactComponent,
-    MainComponent,
-    LeggerComponent,
+    LogoutComponent,
+    HomepageComponent,
+    BulkEmailComponent,
+    CreateEventComponent,
+    AlumnusMenubarComponent,
+    AllEventsComponent,
+    SubscribersComponent,
+//     LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,8 @@ import { LeggerComponent } from './legger/legger.component';
     FileUploadModule,
     ToastModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
     
   ],
   providers: [],

@@ -26,7 +26,7 @@ import com.alumni.service.ImageUploadService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping("/image")
+@RequestMapping("/api/image")
 @CrossOrigin(origins="http://localhost:4200")
 public class ImageController {
 	@Autowired

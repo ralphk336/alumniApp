@@ -49,6 +49,7 @@ public class SecurityConfiguration {
 		httpSecurity.authorizeHttpRequests()
         	.requestMatchers("/api/alumnus").permitAll()
         	.requestMatchers("/api/user").permitAll()
+        	.requestMatchers("/api/image").permitAll()
         	.anyRequest().authenticated();
         	
         	httpSecurity.headers().frameOptions().disable();
@@ -70,15 +71,15 @@ public class SecurityConfiguration {
 	CorsConfigurationSource corsConfigurationSource() {
 	    final CorsConfiguration config = new CorsConfiguration();
 
-	    config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-	    config.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT", "PATCH"));
+	    config.setAllowedOrigins(List.of("http://localhost:4200"));
+	    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE",  "OPTIONS"));
 	    config.setAllowCredentials(true);
-	    config.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+	    config.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
 
-	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-	    source.registerCorsConfiguration("/**", config);
+	    final UrlBasedCorsConfigurationSource corsConfigurationSource = new UrlBasedCorsConfigurationSource();
+	    corsConfigurationSource.registerCorsConfiguration("/**", config);
 
-	    return source;
+	    return corsConfigurationSource;
 	}
 	
 	

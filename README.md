@@ -1,3 +1,13 @@
+# Running the project
+1. Run the database.sql file in phpmyadmin/mysql server
+2. Configure the application.properties file to your mysql user and password. Default configuration is username: root and no password
+3. Run Alumni2application.java
+4. Run npm install to install the required node modules
+5. Run ng serve
+6. Log in or create a user. Default credentials for the admin are
+    username: admin@admin.com
+    password: admin1234
+
 # AlumniApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.

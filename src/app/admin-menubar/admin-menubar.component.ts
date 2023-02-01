@@ -18,7 +18,7 @@ export class AdminMenubarComponent implements OnInit{
                     {
                         label : "All Events",
                         icon : PrimeIcons.LIST,
-                        url : "#"
+                        url : "allEvents"
                     },
                     {
                         label : "New Event",
@@ -58,7 +58,8 @@ export class AdminMenubarComponent implements OnInit{
             ,
             {
               label: "Sign out",
-              icon : PrimeIcons.SIGN_OUT
+              icon : PrimeIcons.SIGN_OUT,
+              url : "logout"
             }
         ];
     }

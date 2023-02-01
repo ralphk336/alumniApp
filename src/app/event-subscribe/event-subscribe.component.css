@@ -29,7 +29,7 @@
 }
 
 .searchBar:focus{
-    outline: none;
+    outline: 2px solid lightblue;
     border: 2px solid white;
 }
 
@@ -37,6 +37,10 @@
     margin-left: 16px;
 }
 
+:host ::ng-deep .p-card{
+    background-color:palegoldenrod;
+    box-shadow: 5px 5px;
+}
 .cardContainer{
     width: 99vw;
     height: 84vh;
