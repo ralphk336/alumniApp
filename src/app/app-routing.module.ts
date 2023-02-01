@@ -7,12 +7,14 @@ import { EventSubscribeComponent } from './event-subscribe/event-subscribe.compo
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { HomepageComponent} from './homepage/homepage.component';
 
 const routes: Routes = [
   //{path: '' , component: AllAlumniComponent},
+  {path: 'homepage', component: HomepageComponent},
+  {path: '', redirectTo: '/homepage', pathMatch: 'full', component: HomepageComponent},
   {path: 'login' , component: LoginComponent},
   {path: 'logout' , component: LogoutComponent},
-  { path: '',   redirectTo: '/login', pathMatch: 'full' },
   {path: 'signup' , component: SignupFormComponent},
   {path: 'allAlumni',component: AllAlumniComponent},
   {path: 'alumniBetween',component: AlumniBetweenComponent},

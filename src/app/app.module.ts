@@ -16,7 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ToastModule} from 'primeng/toast';
-
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +38,8 @@ import { ResetComponent } from './reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { BulkEmailComponent } from './bulk-email/bulk-email.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 // import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
@@ -60,6 +62,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     ResetComponent,
     LogoutComponent,
     HomepageComponent,
+    BulkEmailComponent,
+    CreateEventComponent,
 //     LandingPageComponent,
   ],
   imports: [
@@ -79,7 +83,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     FileUploadModule,
     ToastModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
     
   ],
   providers: [],
